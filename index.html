@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bee Fly Enterprise LLC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- NAVBAR -->
+  <header class="bg-black text-white">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-3">
+        <img src="assets/bee-fly-logo.png" alt="Bee Fly Enterprise LLC" class="h-10 w-10 rounded-full bg-transparent">
+        <div>
+          <p class="font-bold text-lg">Bee Fly Enterprise LLC</p>
+          <p class="text-xs text-gray-300">Trucking · Logistics · Dispatch</p>
+        </div>
+      </div>
+
+      <nav class="flex gap-4 text-sm">
+        <a href="#quote" class="hover:text-yellow-400">GET QUOTE</a>
+        <a href="#services" class="hover:text-yellow-400">SERVICES</a>
+        <a href="#chat" class="hover:text-yellow-400">CHAT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative h-[420px] bg-gradient-to-r from-black via-slate-900 to-slate-700">
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto h-full flex flex-col justify-center px-4 text-white">
+    
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Reliable Trucking & Logistics, Powered by Bee Fly Enterprise LLC
+      </h1>
+      <p class="text-lg mb-6">
+        Dedicated freight, dispatching, and logistics solutions tailored to your routes and business needs.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="#quote"
+           class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold shadow hover:bg-yellow-300 transition">
+          REQUEST QUOTE
+        </a>
+        <a href="#services"
+           class="bg-white text-black px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-200 transition">
+          VIEW SERVICES
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="max-w-5xl mx-auto p-8">
+    <h2 class="text-3xl font-bold mb-3">About Bee Fly Enterprise LLC</h2>
+    <p class="text-lg leading-relaxed">
+      Bee Fly Enterprise LLC is a trucking and logistics company serving routes across New Jersey and New York.
+      We focus on reliability, safety, and clear communication—from dispatch to delivery.
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="max-w-5xl mx-auto p-8">
+    <h2 class="text-3xl font-bold mb-4">Our Services</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-2">Freight Delivery</h3>
+        <p>Local and long‑distance freight with consistent scheduling and tracking.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-2">Dispatching Services</h3>
+        <p>Professional dispatch support to keep your trucks loaded and on time.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-2">Logistics Planning</h3>
+        <p>Route optimization and logistics planning for small and mid‑size fleets.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-2">Dedicated Routes</h3>
+        <p>Custom route agreements for recurring freight and long‑term partners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE FORM -->
+  <section id="quote" class="max-w-5xl mx-auto p-8">
+    <h2 class="text-3xl font-bold mb-4">Request a Quote</h2>
+    <p class="mb-4 text-gray-700">
+      Tell us about your load, route, and timing. We’ll follow up with a custom quote—no prices shown here.
+    </p>
+
+    <form id="quoteForm" class="bg-white p-6 rounded-lg shadow space-y-4">
+      <input id="name" type="text" placeholder="Name"
+             class="w-full border p-3 rounded" required>
+      <input id="email" type="email" placeholder="Email"
+             class="w-full border p-3 rounded" required>
+      <input id="phone" type="tel" placeholder="Phone"
+             class="w-full border p-3 rounded" required>
+      <textarea id="message" placeholder="Describe your freight, route, and timing"
+                class="w-full border p-3 rounded" required></textarea>
+
+      <button type="submit"
+              class="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
+        Send Request
+      </button>
+    </form>
+
+    <p id="confirmation" class="mt-4 text-green-600 font-semibold"></p>
+  </section>
+
+  <!-- CHAT -->
+  <section id="chat" class="max-w-5xl mx-auto p-8">
+    <h2 class="text-3xl font-bold mb-4">Chat Support</h2>
+    <p class="mb-3 text-gray-700">
+      Ask general questions about services, routes, or how Bee Fly Enterprise LLC works.
+    </p>
+
+    <div id="chatBox" class="bg-white p-4 rounded-lg shadow h-64 overflow-y-auto mb-4"></div>
+
+    <div class="flex gap-2">
+      <input id="chatInput" type="text" placeholder="Ask something..."
+             class="flex-1 border p-3 rounded">
+      <button id="chatSend"
+              class="bg-yellow-400 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition">
+        Send
+      </button>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="max-w-5xl mx-auto p-8">
+    <h2 class="text-3xl font-bold mb-4">User Reviews</h2>
+    <p class="mb-3 text-gray-700">
+      Share your experience with Bee Fly Enterprise LLC and read what other customers have to say.
+    </p>
+
+    <form id="reviewForm" class="bg-white p-6 rounded-lg shadow space-y-4 mb-6">
+      <div class="grid gap-4 md:grid-cols-2">
+        <input id="reviewName" type="text" placeholder="Your name"
+               class="w-full border p-3 rounded" required>
+        <input id="reviewLocation" type="text" placeholder="Location (NJ/NY)"
+               class="w-full border p-3 rounded" required>
+      </div>
+      <textarea id="reviewText" placeholder="Write your review here"
+                class="w-full border p-3 rounded" rows="4" required></textarea>
+      <button type="submit"
+              class="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
+        Submit Review
+      </button>
+    </form>
+
+    <div id="reviewList" class="space-y-4"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white text-center py-6 mt-10">
+    <p>Bee Fly Enterprise LLC · Queens, New York · beeflyenterprise@gmail.com</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
