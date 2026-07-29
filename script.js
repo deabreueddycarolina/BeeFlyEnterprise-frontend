@@ -10,8 +10,18 @@ const chatResponses = {
   "default": "Thanks for reaching out! We're here to help. Ask us about our services, routes, or how to get a quote."
 };
 
+// Load global Q&A from localStorage
+let globalQA = JSON.parse(localStorage.getItem('beeFlyQA') || '{}');
+
 function getChatResponse(question) {
   const q = question.toLowerCase();
+  
+  // Check global Q&A first
+  for (const [key, answer] of Object.entries(globalQA)) {
+    if (q.includes(key.toLowerCase())) return answer;
+  }
+  
+  // Check default responses
   for (const [key, response] of Object.entries(chatResponses)) {
     if (q.includes(key)) return response;
   }
@@ -29,7 +39,7 @@ navTitle.addEventListener('click', () => {
   
   if (isGoldMode) {
     // Change to gold mode
-    navbar.classList.remove('bg-white', 'border-yellow-400');
+    navbar.classList.remove('bg-white');
     navbar.classList.add('bg-yellow-300', 'border-yellow-500');
     navbar.classList.remove('text-gray-800');
     navbar.classList.add('text-gray-900');
@@ -44,7 +54,7 @@ navTitle.addEventListener('click', () => {
     navTitle.title = 'Click to toggle back to normal colors';
   } else {
     // Change back to normal mode
-    navbar.classList.add('bg-white', 'border-yellow-400');
+    navbar.classList.add('bg-white');
     navbar.classList.remove('bg-yellow-300', 'border-yellow-500');
     navbar.classList.add('text-gray-800');
     navbar.classList.remove('text-gray-900');
@@ -92,7 +102,7 @@ document.querySelector("#quoteForm").addEventListener("submit", async (e) => {
   }
 });
 
-// CHAT - Local responses only
+// CHAT - Local responses with global Q&A
 document.querySelector("#chatSend").addEventListener("click", () => {
   const input = document.querySelector("#chatInput");
   const message = input.value.trim();
@@ -107,6 +117,12 @@ document.querySelector("#chatSend").addEventListener("click", () => {
     addMessage("bot", reply);
   }, 500);
 });
+
+// Add new Q&A to global storage
+function addGlobalQA(question, answer) {
+  globalQA[question] = answer;
+  localStorage.setItem('beeFlyQA', JSON.stringify(globalQA));
+}
 
 function addMessage(sender, text) {
   const box = document.querySelector("#chatBox");
