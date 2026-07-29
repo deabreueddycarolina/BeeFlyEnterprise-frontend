@@ -1,6 +1,22 @@
-// Ajusta estas URLs a tu backend en Render
-const API_QUOTE = "https://beeflyenterprise-api.onrender.com/api/quote";
-const API_CHAT  = "https://beeflyenterprise-api.onrender.com/api/chat";
+// Formspree for email
+const FORMSPREE_ID = "xyzghlpk"; // Test ID - replace with yours from formspree.io
+
+// Simple chat responses
+const chatResponses = {
+  "services": "We offer freight delivery, dispatching services, logistics planning, and dedicated routes across NJ & NY.",
+  "quote": "To get a quote, scroll to the Quote section and fill out the form with your freight details.",
+  "contact": "You can reach us at beeflyenterprise@gmail.com or follow us on Instagram @beeflyenterprisellc.",
+  "routes": "We serve routes across New Jersey and New York. Ask about our dedicated route agreements.",
+  "default": "Thanks for reaching out! We're here to help. Ask us about our services, routes, or how to get a quote."
+};
+
+function getChatResponse(question) {
+  const q = question.toLowerCase();
+  for (const [key, response] of Object.entries(chatResponses)) {
+    if (q.includes(key)) return response;
+  }
+  return chatResponses.default;
+}
 
 // NAVBAR GOLD MODE TOGGLE
 let isGoldMode = false;
@@ -44,7 +60,7 @@ navTitle.addEventListener('click', () => {
   }
 });
 
-// QUOTE FORM
+// QUOTE FORM - Send to email via Formspree
 document.querySelector("#quoteForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -56,22 +72,28 @@ document.querySelector("#quoteForm").addEventListener("submit", async (e) => {
   };
 
   try {
-    const res = await fetch(API_QUOTE, {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
 
-    const msg = await res.text();
-    document.querySelector("#confirmation").textContent = msg;
+    if (res.ok) {
+      document.querySelector("#confirmation").textContent = "Quote sent! We'll contact you soon.";
+      document.querySelector("#confirmation").className = "mt-4 text-green-600 font-semibold";
+      document.querySelector("#quoteForm").reset();
+    } else {
+      document.querySelector("#confirmation").textContent = "There was an error. Please try again.";
+      document.querySelector("#confirmation").className = "mt-4 text-red-600 font-semibold";
+    }
   } catch (err) {
-    document.querySelector("#confirmation").textContent =
-      "There was an error sending your request. Please try again.";
+    document.querySelector("#confirmation").textContent = "There was an error sending your request. Please try again.";
+    document.querySelector("#confirmation").className = "mt-4 text-red-600 font-semibold";
   }
 });
 
-// CHAT
-document.querySelector("#chatSend").addEventListener("click", async () => {
+// CHAT - Local responses only
+document.querySelector("#chatSend").addEventListener("click", () => {
   const input = document.querySelector("#chatInput");
   const message = input.value.trim();
   if (!message) return;
@@ -79,18 +101,11 @@ document.querySelector("#chatSend").addEventListener("click", async () => {
   addMessage("user", message);
   input.value = "";
 
-  try {
-    const res = await fetch(API_CHAT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question: message })
-    });
-
-    const reply = await res.text();
+  // Get local response
+  setTimeout(() => {
+    const reply = getChatResponse(message);
     addMessage("bot", reply);
-  } catch (err) {
-    addMessage("bot", "There was an error. Please try again later.");
-  }
+  }, 500);
 });
 
 function addMessage(sender, text) {
