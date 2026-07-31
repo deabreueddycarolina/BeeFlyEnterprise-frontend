@@ -1,5 +1,5 @@
 // Formspree for email
-const FORMSPREE_ID = "xyzghlpk"; // Test ID - replace with yours from formspree.io
+const FORMSPREE_ID = "mjgndrwd"; // Your actual Formspree ID
 
 // Simple chat responses
 const chatResponses = {
