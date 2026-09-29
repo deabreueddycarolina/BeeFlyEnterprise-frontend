@@ -9,6 +9,7 @@ const chatResponses = {
   "do you charge by the hour": "We offer both hourly and flat-rate options depending on your move.",
   "extra fees": "Additional fees may apply for stairs, long carries, or oversized items. We'll quote all costs upfront!",
   "deposit": "Yes, a small deposit is required to confirm your booking.",
+  "how much does a trip cost": "Pricing depends on distance, load size, and timing. Send us your route and details, and we'll calculate an exact quote for you.",
 
   // Services
   "services": "We offer local moves, long-distance moves, packing, loading/unloading, and furniture assembly across NJ & NY!",
@@ -17,6 +18,10 @@ const chatResponses = {
   "large furniture": "Absolutely! We handle pianos, safes, appliances, and oversized furniture with professional care.",
   "storage": "Yes, we offer both short-term and long-term storage options. Contact us for details!",
   "assembly": "Yes, we can help with furniture assembly and disassembly as part of your move.",
+  "what types of loads": "We handle general freight, commercial deliveries, small business shipments, and dedicated routes. If you have a specific type of load, just ask and we'll confirm availability.",
+  "types of loads": "We handle general freight, commercial deliveries, small business shipments, and dedicated routes. If you have a specific type of load, just ask and we'll confirm availability.",
+  "dispatching services": "Yes, we offer professional dispatching for owner-operators and small fleets, including route planning and load management.",
+  "dedicated routes": "We provide recurring and dedicated routes for businesses that need consistent deliveries.",
 
   // Routes & Areas
   "where do you serve": "We serve all of New Jersey and New York, including NYC, Brooklyn, Queens, the Bronx, Staten Island, Long Island, and Westchester.",
@@ -24,14 +29,25 @@ const chatResponses = {
   "nj to ny": "Yes! NJ ↔ NY moves are one of our most common routes. We have extensive experience in this corridor.",
   "long distance": "Yes, we handle long-distance moves throughout NJ, NY, and nearby states. Request a quote for your destination!",
   "routes": "We serve routes across New Jersey and New York. Ask about our dedicated route agreements.",
+  "do you operate only in new york": "We primarily serve New York and New Jersey, but we can accommodate longer routes depending on the load and schedule.",
+  "only new york": "We primarily serve New York and New Jersey, but we can accommodate longer routes depending on the load and schedule.",
+  "manhattan": "Absolutely. We handle Manhattan pickups and deliveries, including tight-access areas.",
+  "pick up in manhattan": "Absolutely. We handle Manhattan pickups and deliveries, including tight-access areas.",
 
   // Booking & Scheduling
   "how do i get a quote": "Call us at 347-756-2281, email beeflyenterprise.llc@gmail.com, or fill out the quote form on our website. It's free!",
   "quote": "To get a free quote, fill out the 'Request a Quote' form below with your move details, or call us at 347-756-2281.",
+  "how do i request a quote": "You can request a quote by sharing your pickup location, drop-off location, load details, and preferred date/time. We'll respond quickly with pricing.",
+  "request a quote": "You can request a quote by sharing your pickup location, drop-off location, load details, and preferred date/time. We'll respond quickly with pricing.",
   "how far in advance": "We recommend booking at least 1-2 weeks in advance, especially for weekends. Last-minute moves may be available—call us!",
   "reschedule": "Yes! Contact us at least 48 hours before your scheduled move date to reschedule.",
   "weekends": "Yes, we operate 7 days a week, including weekends!",
   "when can you move": "We operate 7 days a week. We recommend booking 1-2 weeks in advance for the best availability.",
+  "same-day delivery": "Yes, we offer same-day and urgent deliveries when availability allows. Message us your route and timing to confirm.",
+  "same day": "Yes, we offer same-day and urgent deliveries when availability allows. Message us your route and timing to confirm.",
+  "urgent": "Yes, we offer same-day and urgent deliveries when availability allows. Message us your route and timing to confirm.",
+  "how do i book": "Just send us your pickup and drop-off information, and we'll schedule your delivery and confirm the time.",
+  "book a delivery": "Just send us your pickup and drop-off information, and we'll schedule your delivery and confirm the time.",
 
   // Trust & Safety
   "licensed": "Yes, we are fully licensed and insured in NJ and NY. Your move is in safe hands!",
@@ -39,6 +55,7 @@ const chatResponses = {
   "damage": "We carry liability coverage and our team is professionally trained. If any item is damaged, we'll help resolve it immediately.",
   "safe": "Our team is professionally trained and all items are carefully wrapped and secured. We treat your belongings like our own!",
   "certified": "Yes, we are licensed, insured, and certified movers dedicated to your satisfaction.",
+  "are you licensed and insured": "Yes, Bee Fly Enterprise LLC is fully licensed and insured for commercial transportation and logistics services.",
 
   // Spanish / Mudanza
   "¿cuánto cuesta": "El precio depende de la distancia, el tamaño del camión y las horas. ¡Contáctenos para un presupuesto gratis! Llame al 347-756-2281.",
