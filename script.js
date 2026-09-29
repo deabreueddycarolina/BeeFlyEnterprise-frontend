@@ -26,6 +26,7 @@ const chatResponses = {
   // Routes & Areas
   "where do you serve": "We serve all of New Jersey and New York, including NYC, Brooklyn, Queens, the Bronx, Staten Island, Long Island, and Westchester.",
   "areas": "We cover all of NJ and NY including NYC, the 5 boroughs, Long Island, Westchester, and surrounding areas.",
+  "what areas do you cover": "We cover New York and New Jersey, including Manhattan, Queens, Brooklyn, Long Island, and surrounding areas.",
   "nj to ny": "Yes! NJ ↔ NY moves are one of our most common routes. We have extensive experience in this corridor.",
   "long distance": "Yes, we handle long-distance moves throughout NJ, NY, and nearby states. Request a quote for your destination!",
   "routes": "We serve routes across New Jersey and New York. Ask about our dedicated route agreements.",
@@ -39,7 +40,7 @@ const chatResponses = {
   "quote": "To get a free quote, fill out the 'Request a Quote' form below with your move details, or call us at 347-756-2281.",
   "how do i request a quote": "You can request a quote by sharing your pickup location, drop-off location, load details, and preferred date/time. We'll respond quickly with pricing.",
   "request a quote": "You can request a quote by sharing your pickup location, drop-off location, load details, and preferred date/time. We'll respond quickly with pricing.",
-  "how far in advance": "We recommend booking at least 1-2 weeks in advance, especially for weekends. Last-minute moves may be available—call us!",
+  "how far in advance": "You can book anytime. For guaranteed scheduling, we recommend booking at least 24 hours ahead.",
   "reschedule": "Yes! Contact us at least 48 hours before your scheduled move date to reschedule.",
   "weekends": "Yes, we operate 7 days a week, including weekends!",
   "when can you move": "We operate 7 days a week. We recommend booking 1-2 weeks in advance for the best availability.",
