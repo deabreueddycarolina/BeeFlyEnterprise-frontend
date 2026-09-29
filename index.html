@@ -5,23 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bee Fly Enterprise LLC</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Mobile optimization */
+    @media (max-width: 768px) {
+      body { font-size: 14px; }
+      h1 { font-size: 2rem !important; }
+      h2 { font-size: 1.5rem !important; }
+      section { padding: 1rem !important; }
+      .text-6xl { font-size: 2.5rem; }
+      nav { gap: 4px; font-size: 0.75rem; }
+    }
+    /* Hide navbar on very small screens, show hamburger */
+    @media (max-width: 640px) {
+      nav { flex-direction: column; gap: 0.5rem; font-size: 0.7rem; }
+      .max-w-5xl { padding: 0.5rem; }
+    }
+  </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800">
 
   <!-- NAVBAR -->
-  <header id="navbar" class="bg-white text-gray-800 shadow-lg">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-      <div class="flex items-center gap-3 cursor-pointer" id="navTitle" title="Click to toggle gold colors">
-        <img src="assets/bee-fly-logo.png" alt="Bee Fly Enterprise LLC" class="h-10 w-10 rounded-full bg-transparent">
-        <div>
-          <p class="font-bold text-lg text-yellow-600">Bee Fly Enterprise LLC</p>
+  <header id="navbar" class="bg-white text-gray-800 shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-2 md:px-4 py-2 md:py-3">
+      <div class="flex items-center gap-2 md:gap-3 cursor-pointer" id="navTitle" title="Click to toggle gold colors">
+        <img src="assets/bee-fly-logo.png" alt="Bee Fly Enterprise LLC" class="h-8 md:h-10 w-8 md:w-10 rounded-full bg-transparent">
+        <div class="hidden sm:block">
+          <p class="font-bold text-sm md:text-lg text-yellow-600">Bee Fly Enterprise LLC</p>
           <p class="text-xs text-gray-500">Trucking · Logistics · Dispatch</p>
         </div>
       </div>
 
-      <nav class="flex gap-8 text-sm font-bold">
-        <a href="#quote" id="nav-quote" class="text-yellow-600 hover:text-yellow-700 transition duration-300">GET QUOTE</a>
+      <nav class="flex gap-2 md:gap-8 text-xs md:text-sm font-bold">
+        <a href="#quote" id="nav-quote" class="text-yellow-600 hover:text-yellow-700 transition duration-300">QUOTE</a>
         <a href="#services" id="nav-services" class="text-yellow-600 hover:text-yellow-700 transition duration-300">SERVICES</a>
         <a href="#chat" id="nav-chat" class="text-yellow-600 hover:text-yellow-700 transition duration-300">CHAT</a>
       </nav>
@@ -29,28 +45,28 @@
   </header>
 
   <!-- HERO -->
-  <section class="relative h-[500px] bg-cover bg-center" style="background-image: url('assets/truck-nyc-sunset.png'); background-attachment: fixed;">
+  <section class="relative h-64 sm:h-80 md:h-[500px] bg-cover bg-center" style="background-image: url('assets/truck-nyc-sunset.png'); background-attachment: fixed;">
     <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-transparent"></div>
 
-    <div class="relative z-10 max-w-7xl mx-auto h-full flex flex-col justify-center px-8">
+    <div class="relative z-10 max-w-7xl mx-auto h-full flex flex-col justify-center px-4 md:px-8">
       <div class="max-w-2xl">
-        <div class="inline-block mb-4">
-          <span class="bg-gradient-to-r from-gray-700 to-gray-600 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg">TRUSTED LOGISTICS PARTNER</span>
+        <div class="inline-block mb-2 md:mb-4">
+          <span class="bg-gradient-to-r from-gray-700 to-gray-600 text-white px-3 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-bold shadow-lg">TRUSTED LOGISTICS PARTNER</span>
         </div>
         
-        <h1 class="text-6xl md:text-7xl font-black mb-6 leading-tight text-white drop-shadow-lg">
+        <h1 class="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-3 md:mb-6 leading-tight text-white drop-shadow-lg">
           Enterprise Trucking<br><span class="text-white">Simplified</span>
         </h1>
         
-        <p class="text-xl md:text-2xl mb-8 text-gray-100 leading-relaxed drop-shadow">
+        <p class="text-sm sm:text-base md:text-xl lg:text-2xl mb-4 md:mb-8 text-gray-100 leading-relaxed drop-shadow">
           Professional freight dispatch, logistics planning, and dedicated routes across NJ & NY.
         </p>
         
-        <div class="flex flex-wrap gap-4">
-          <a href="#quote" class="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition transform hover:scale-105">
+        <div class="flex flex-col sm:flex-row gap-2 md:gap-4">
+          <a href="#quote" class="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white px-4 md:px-8 py-2 md:py-4 rounded-lg font-bold text-sm md:text-lg shadow-lg transition transform hover:scale-105">
             GET A QUOTE
           </a>
-          <a href="#services" class="bg-gradient-to-r from-gray-600 to-gray-500 hover:from-gray-700 hover:to-gray-600 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition transform hover:scale-105">
+          <a href="#services" class="bg-gradient-to-r from-gray-600 to-gray-500 hover:from-gray-700 hover:to-gray-600 text-white px-4 md:px-8 py-2 md:py-4 rounded-lg font-bold text-sm md:text-lg shadow-lg transition transform hover:scale-105">
             OUR SERVICES
           </a>
         </div>
@@ -59,93 +75,93 @@
   </section>
 
   <!-- ABOUT -->
-  <section class="max-w-5xl mx-auto p-8">
-    <h2 class="text-3xl font-bold mb-3">About Bee Fly Enterprise LLC</h2>
-    <p class="text-lg leading-relaxed">
+  <section class="max-w-5xl mx-auto p-4 md:p-8">
+    <h2 class="text-2xl md:text-3xl font-bold mb-3">About Bee Fly Enterprise LLC</h2>
+    <p class="text-base md:text-lg leading-relaxed">
       Bee Fly Enterprise LLC is a trucking and logistics company serving routes across New Jersey and New York.
       We focus on reliability, safety, and clear communication—from dispatch to delivery.
     </p>
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="max-w-5xl mx-auto p-8">
-    <h2 class="text-3xl font-bold mb-4">Our Services</h2>
+  <section id="services" class="max-w-5xl mx-auto p-4 md:p-8">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">Our Services</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="text-xl font-semibold mb-2">Freight Delivery</h3>
-        <p>Local and long‑distance freight with consistent scheduling and tracking.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      <div class="bg-white p-4 md:p-6 rounded-lg shadow">
+        <h3 class="text-lg md:text-xl font-semibold mb-2">Freight Delivery</h3>
+        <p class="text-sm md:text-base">Local and long‑distance freight with consistent scheduling and tracking.</p>
       </div>
 
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="text-xl font-semibold mb-2">Dispatching Services</h3>
-        <p>Professional dispatch support to keep your trucks loaded and on time.</p>
+      <div class="bg-white p-4 md:p-6 rounded-lg shadow">
+        <h3 class="text-lg md:text-xl font-semibold mb-2">Dispatching Services</h3>
+        <p class="text-sm md:text-base">Professional dispatch support to keep your trucks loaded and on time.</p>
       </div>
 
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="text-xl font-semibold mb-2">Logistics Planning</h3>
-        <p>Route optimization and logistics planning for small and mid‑size fleets.</p>
+      <div class="bg-white p-4 md:p-6 rounded-lg shadow">
+        <h3 class="text-lg md:text-xl font-semibold mb-2">Logistics Planning</h3>
+        <p class="text-sm md:text-base">Route optimization and logistics planning for small and mid‑size fleets.</p>
       </div>
 
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="text-xl font-semibold mb-2">Dedicated Routes</h3>
-        <p>Custom route agreements for recurring freight and long‑term partners.</p>
+      <div class="bg-white p-4 md:p-6 rounded-lg shadow">
+        <h3 class="text-lg md:text-xl font-semibold mb-2">Dedicated Routes</h3>
+        <p class="text-sm md:text-base">Custom route agreements for recurring freight and long‑term partners.</p>
       </div>
     </div>
   </section>
 
   <!-- QUOTE FORM -->
-  <section id="quote" class="max-w-5xl mx-auto p-8">
-    <h2 class="text-3xl font-bold mb-4">Request a Quote</h2>
-    <p class="mb-4 text-gray-700">
+  <section id="quote" class="max-w-5xl mx-auto p-4 md:p-8">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">Request a Quote</h2>
+    <p class="mb-4 text-sm md:text-base text-gray-700">
       Tell us about your load, route, and timing. We'll follow up with a custom quote—no prices shown here.
     </p>
 
-    <form id="quoteForm" class="bg-white p-6 rounded-lg shadow space-y-4">
-      <input id="name" type="text" placeholder="Name" class="w-full border p-3 rounded" required>
-      <input id="email" type="email" placeholder="Email" class="w-full border p-3 rounded" required>
-      <input id="phone" type="tel" placeholder="Phone" class="w-full border p-3 rounded" required>
-      <textarea id="message" placeholder="Describe your freight, route, and timing" class="w-full border p-3 rounded" required></textarea>
+    <form id="quoteForm" class="bg-white p-4 md:p-6 rounded-lg shadow space-y-4">
+      <input id="name" type="text" placeholder="Name" class="w-full border p-2 md:p-3 rounded text-sm md:text-base" required>
+      <input id="email" type="email" placeholder="Email" class="w-full border p-2 md:p-3 rounded text-sm md:text-base" required>
+      <input id="phone" type="tel" placeholder="Phone" class="w-full border p-2 md:p-3 rounded text-sm md:text-base" required>
+      <textarea id="message" placeholder="Describe your freight, route, and timing" class="w-full border p-2 md:p-3 rounded text-sm md:text-base" required></textarea>
 
-      <button type="submit" class="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition">
+      <button type="submit" class="w-full md:w-auto bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold shadow-lg transition text-sm md:text-base">
         Send Request
       </button>
     </form>
 
-    <p id="confirmation" class="mt-4 text-green-600 font-semibold"></p>
+    <p id="confirmation" class="mt-4 text-green-600 font-semibold text-sm md:text-base"></p>
   </section>
 
   <!-- CHAT -->
-  <section id="chat" class="max-w-5xl mx-auto p-8">
-    <h2 class="text-3xl font-bold mb-4">Chat Support</h2>
-    <p class="mb-3 text-gray-700">
+  <section id="chat" class="max-w-5xl mx-auto p-4 md:p-8">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">Chat Support</h2>
+    <p class="mb-3 text-sm md:text-base text-gray-700">
       Ask general questions about services, routes, or how Bee Fly Enterprise LLC works.
     </p>
 
-    <div id="chatBox" class="bg-white p-4 rounded-lg shadow h-64 overflow-y-auto mb-4"></div>
+    <div id="chatBox" class="bg-white p-3 md:p-4 rounded-lg shadow h-48 md:h-64 overflow-y-auto mb-4 text-sm md:text-base"></div>
 
     <div class="flex gap-2">
-      <input id="chatInput" type="text" placeholder="Ask something..." class="flex-1 border p-3 rounded">
-      <button id="chatSend" class="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white px-4 py-2 rounded-lg font-semibold shadow-lg transition">
+      <input id="chatInput" type="text" placeholder="Ask something..." class="flex-1 border p-2 md:p-3 rounded text-sm md:text-base">
+      <button id="chatSend" class="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white px-3 md:px-4 py-2 rounded-lg font-semibold shadow-lg transition text-sm md:text-base">
         Send
       </button>
     </div>
   </section>
 
   <!-- REVIEWS -->
-  <section id="reviews" class="max-w-5xl mx-auto p-8">
-    <h2 class="text-3xl font-bold mb-4">User Reviews</h2>
-    <p class="mb-3 text-gray-700">
+  <section id="reviews" class="max-w-5xl mx-auto p-4 md:p-8">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">User Reviews</h2>
+    <p class="mb-3 text-sm md:text-base text-gray-700">
       Share your experience with Bee Fly Enterprise LLC and read what other customers have to say.
     </p>
 
-    <form id="reviewForm" class="bg-white p-6 rounded-lg shadow space-y-4 mb-6">
+    <form id="reviewForm" class="bg-white p-4 md:p-6 rounded-lg shadow space-y-4 mb-6">
       <div class="grid gap-4 md:grid-cols-2">
-        <input id="reviewName" type="text" placeholder="Your name" class="w-full border p-3 rounded" required>
-        <input id="reviewLocation" type="text" placeholder="Location (NJ/NY)" class="w-full border p-3 rounded" required>
+        <input id="reviewName" type="text" placeholder="Your name" class="w-full border p-2 md:p-3 rounded text-sm md:text-base" required>
+        <input id="reviewLocation" type="text" placeholder="Location (NJ/NY)" class="w-full border p-2 md:p-3 rounded text-sm md:text-base" required>
       </div>
-      <textarea id="reviewText" placeholder="Write your review here" class="w-full border p-3 rounded" rows="4" required></textarea>
-      <button type="submit" class="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition">
+      <textarea id="reviewText" placeholder="Write your review here" class="w-full border p-2 md:p-3 rounded text-sm md:text-base" rows="4" required></textarea>
+      <button type="submit" class="w-full md:w-auto bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold shadow-lg transition text-sm md:text-base">
         Submit Review
       </button>
     </form>
